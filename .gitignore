@@ -1,0 +1,11 @@
+build/
+install/
+log/
+.cmake/
+*.so
+*.pyc
+__pycache__/
+unitree_sdk2/build/
+unitree_ros2/build/
+unitree_ros2/install/
+unitree_ros2/log/
