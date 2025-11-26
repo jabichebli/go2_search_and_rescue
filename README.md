@@ -1,4 +1,8 @@
 ```
+# source ~/go2_search_and_rescue/unitree_ros2/install/setup.bash
+```
+
+```
 ~/go2_search_and_rescue/ 
     └── src/
         ├── unitree_ros2/       
