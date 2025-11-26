@@ -1,3 +1,4 @@
+```
 ~/go2_search_and_rescue/ 
     └── src/
         ├── unitree_ros2/       
@@ -21,3 +22,4 @@
             │   └── slam_toolbox.yaml    <-- Mapping settings
             │
             └── maps/                <-- Saved .pgm and .yaml maps
+```
