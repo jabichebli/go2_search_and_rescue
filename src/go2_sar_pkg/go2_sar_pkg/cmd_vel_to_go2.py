@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python3:
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
@@ -22,6 +22,7 @@ class CmdVelToGo2(Node):
         self.get_logger().info("Bridge Started: /cmd_vel -> Unitree Go2 API")
 
     def listener_callback(self, msg):
+        self.get_logger().info("in callback")
         # Extract velocities
         # x = Forward/Backward (max ~1.0 m/s)
         # y = Strafe Left/Right (max ~0.5 m/s)
@@ -33,11 +34,12 @@ class CmdVelToGo2(Node):
         # Construct the JSON command Unitree expects
         # API ID 1004 is "Move"
         req = Request()
-        req.header.identity.api_id = 1004 
+        req.header.identity.api_id = 1008 
 
         # The Go2 expects the parameter to be a JSON string: {"x": 0.0, "y": 0.0, "z": 0.0}
         command_data = {'x': vx, 'y': vy, 'z': wz}
         req.parameter = json.dumps(command_data)
+        self.get_logger().info(f"{req}")
 
         # Publish
         self.req_pub.publish(req)

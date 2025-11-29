@@ -1,11 +1,11 @@
-from setuptools import find_packages, setup
+from setuptools import setup
 
 package_name = 'go2_sar_pkg'
 
 setup(
     name=package_name,
     version='0.0.0',
-    packages=find_packages(exclude=['test']),
+    packages=[package_name],
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
@@ -13,17 +13,14 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='jason',
-    maintainer_email='jason.abichebli@gmail.com',
+    maintainer='unitree',
+    maintainer_email='unitree@todo.todo',
     description='TODO: Package description',
     license='TODO: License declaration',
-    extras_require={
-        'test': [
-            'pytest',
-        ],
-    },
+    tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-        ],
-    },
+            'simple_navigator = go2_sar_pkg.simple_navigator:main',
+            ],
+        },
 )
